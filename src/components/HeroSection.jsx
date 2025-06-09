@@ -1,29 +1,30 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
+import resume from "../../public/Deelolade.pdf"
 
 const HeroSection = () => {
   const textRef = useRef(null);
   const ctaRef = useRef(null);
-  useEffect(() => {
-    const words = textRef.current.textContent.split(" ");
-    textRef.current.innerHTML = words
-      .map(word => `<span class="inline-block overflow-hidden"><span class="inline-block translate-y-full">${word}&nbsp;</span></span>`)
-      .join("");
+  // useEffect(() => {
+  //   const words = textRef.current.textContent.split(" ");
+  //   textRef.current.innerHTML = words
+  //     .map(word => `<span class="inline-block overflow-hidden"><span class="inline-block translate-y-full">${word}&nbsp;</span></span>`)
+  //     .join("");
 
-    gsap.to(".translate-y-full", {
-      y: 0,
-      opacity: 1,
-      duration: .5,
-      stagger: 0.1,
-      ease: "expo.out",
-    });
-    // Animate CTA buttons
-    gsap.fromTo(
-      ctaRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: .5, delay: 1, ease: "power2.out" }
-      );
-    }, []);
+  //   // gsap.to(".translate-y-full", {
+  //   //   y: 0,
+  //   //   opacity: 1,
+  //   //   duration: .5,
+  //   //   stagger: 0.1,
+  //   //   ease: "expo.out",
+  //   // });
+  //   // Animate CTA buttons
+  //   gsap.fromTo(
+  //     ctaRef.current,
+  //     { opacity: 0, y: 20 },
+  //     { opacity: 1, y: 0, duration: .5, delay: 1, ease: "power2.out" }
+  //     );
+  //   }, []);
 
 
 
@@ -52,9 +53,10 @@ const HeroSection = () => {
         </p>
         
         {/* CTA Buttons */}
+        
         <div ref={ctaRef} className="mt-8 flex flex-wrap gap-4 justify-center">
           <a
-            href="#projects"
+            href={resume}
             className="bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-700 transition"
           >
             View My Work
