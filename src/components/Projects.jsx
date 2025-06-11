@@ -3,7 +3,7 @@ import BgImage from "./Background"
 
 const Projects = () => {
     return (
-        <div className='min-h-screen min-w-screen relative'>
+        <div className='min-h-screen min-w-screen relative bg-gray-300'>
             <div className="max-w-[1500px]  relative   h-screen mx-auto flex justify-between items-center">
                 <h1 className='text-7xl font-bold text-center'>My Projects.</h1>
                 <div className="  flex md:flex-row flex-col pr-40 gap-10 h-[65%] items-center overflow-x-auto scroll-smooth scrollbar-hide md:w-[65%] whitespace-nowrap transition ">
