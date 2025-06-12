@@ -9,12 +9,13 @@ const HeroSection = () => {
   useGSAP(()=>{
     const tl = gsap.timeline();
     tl.from(".hero-text",{
-      y: "-100",
+      y: "-300",
           opacity: 0,
+          filter:"blur(5px)",
           stagger: {
-            each :0.1
+            each :0.2
           },
-          duration: 0.5,
+          duration: 0.7,
           ease: "power2.out",
     })
     ScrollTrigger.matchMedia({
@@ -22,17 +23,17 @@ const HeroSection = () => {
       const leaveTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".hero-text",
-          start: "center top",   // when top of .hero-text hits center of viewport
+          start: "  top center ",   // when top of .hero-text hits center of viewport
           end: "bottom top",     // when bottom of .hero-text hits top of viewport
           scrub: true,
         }
       });
       
       leaveTl.to(".hero-text", {
-        x: "-200vh",
+        filter: "blur(5px)",
         opacity: 1,
         stagger: {
-          each :0.1
+          each :0.3
         },
         duration: 0.9,
         ease: "power2.out",
@@ -56,7 +57,7 @@ const HeroSection = () => {
         
         {/* CTA Buttons */}
         
-        <div  className="hero-text  mt-8 flex flex-wrap gap-4 justify-center">
+        <div  className="hero-text  mt-8 flex flex-wrap gap-4 justify-start">
           <a
             href={resume}
             className="bg-gray-700 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-black transition"
