@@ -45,28 +45,26 @@ const HeroSection = () => {
 
 
   return (
-    <div className='h-screen flex justify-center  items-center xs:px-4'>
-      <div className=" text-left max-w-5xl" ref={containerRef} >
-        <h1 className='hero-text xs:text-4xl text-6xl font-bold ' >Hire Deelolade.</h1>
-        <p className=" hero-text xs:text-4xl text-6xl font-bold ">
+    <div className='h-screen flex justify-center  items-center md:px-4'>
+      <div className=" text-left max-w-5xl xxs:mt-16" ref={containerRef} >
+        <h1 className='hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold ' >Hire Deelolade.</h1>
+        <p className=" hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold ">
           The Best Full-Stack Developer.
         </p>
-        <p className="max-w-3xl xs:text-lg hero-text text-lg sm:text-xl mt-2 text-gray-400">
+        <p className="max-w-3xl xxs:text-[15px] xxs:text-left xs:text-lg hero-text text-lg sm:text-xl mt-2 text-gray-400">
         I’m a freelance <b className='hover:text-black transition'>full-stack developer</b> dedicated to building modern, scalable <b  className='hover:text-black transition'>web applications</b>. <br /> I specialize in creating smooth user experiences and performance-optimized digital products for <b className='hover:text-black transition'>startups</b> and <b className='hover:text-black transition'>businesses</b> that value quality and speed.
         </p>
-        
         {/* CTA Buttons */}
-        
         <div  className="hero-text  mt-8 flex flex-wrap gap-4 justify-start">
           <a
             href={resume}
-            className="bg-gray-700 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-black transition"
+            className="bg-gray-700 text-white xxs:px-3 xxs:py-2 px-6 py-3 rounded-md text-lg font-medium hover:bg-black transition"
           >
             View My Work
           </a>
           <a
             href="mailto:habeeboluwanishola13@gmail.com"
-            className="border border-black text-gray-700 px-6 py-3 rounded-md text-lg font-medium hover:bg-black hover:text-white transition"
+            className="border border-black text-gray-700 px-6 xxs:py-2 py-3 rounded-md text-lg font-medium hover:bg-black hover:text-white transition"
           >
             Let's Talk
           </a>

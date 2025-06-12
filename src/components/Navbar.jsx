@@ -54,7 +54,7 @@ const Navbar = () => {
   }, []);
   return (
     <div className="w-full bg-white border-b border-gray-200 fixed z-50">
-      <nav className="flex justify-between items-center h-[8vh] max-w-6xl w-[100vw] mx-auto px-6 lg:px-7 xl:px-0   ">
+      <nav className="flex justify-between items-center xxs:h-[10vh] h-[8vh] max-w-6xl w-[100vw] mx-auto px-6 lg:px-7 xl:px-0   ">
         <div className="logo font-bold text-xl text-gray-700 hover:text-black cursor-pointer">
           Deelolade
         </div>
@@ -63,6 +63,7 @@ const Navbar = () => {
             <Link
               key={item}
               ref={addToRefs}
+              to={`/${item.toLowerCase()}`}
               className="relative inline-block hover-underline  font-semibold rounded-lg text-gray-700 hover:text-black px-4 py-2 hover:bg-gray-10"
             >
               {item}{" "}
@@ -105,7 +106,7 @@ const Navbar = () => {
                     ))
                 }
             </div>
-            <div className="xxs:mt-4 mt-8 flex xxs:flex-col xxs:px-8 gap-4 justify-center">
+            <div className="xxs:mt-4 mt-8 flex   gap-4 justify-center">
               <a
                 href="https://github.com/Deelolade/"
                 className=" text-center flex justify-center items-center  text-gray-700 px-6 py-3 rounded-full text-lg font-medium hover:text-black transition"
@@ -118,7 +119,7 @@ const Navbar = () => {
                 target="_blank"
                 className="relative hover-underline flex justify-between items-center gap-3  text-gray-700 px-6 py-3 rounded-full text-lg font-medium hover:text-black  transition"
               >
-                View Résumé <FaExternalLinkAlt />
+                View Résumé <FaExternalLinkAlt className="scale-75" />
               </a>
             </div>
           </div>
