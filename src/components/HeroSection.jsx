@@ -1,69 +1,71 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
 import resume from "../../public/Deelolade.pdf"
-
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const HeroSection = () => {
-  const textRef = useRef(null);
-  const ctaRef = useRef(null);
-  // useEffect(() => {
-  //   const words = textRef.current.textContent.split(" ");
-  //   textRef.current.innerHTML = words
-  //     .map(word => `<span class="inline-block overflow-hidden"><span class="inline-block translate-y-full">${word}&nbsp;</span></span>`)
-  //     .join("");
+  gsap.registerPlugin(ScrollTrigger) 
+  const containerRef = useRef(null);
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from(".hero-text",{
+      y: "-100",
+          opacity: 0,
+          stagger: {
+            each :0.1
+          },
+          duration: 0.5,
+          ease: "power2.out",
+    })
+    ScrollTrigger.matchMedia({
+    "(min-width: 768px)": ()=>{
+      const leaveTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero-text",
+          start: "center top",   // when top of .hero-text hits center of viewport
+          end: "bottom top",     // when bottom of .hero-text hits top of viewport
+          scrub: true,
+        }
+      });
+      
+      leaveTl.to(".hero-text", {
+        x: "-200vh",
+        opacity: 1,
+        stagger: {
+          each :0.1
+        },
+        duration: 0.9,
+        ease: "power2.out",
+          });
+    }  
+    })
 
-  //   // gsap.to(".translate-y-full", {
-  //   //   y: 0,
-  //   //   opacity: 1,
-  //   //   duration: .5,
-  //   //   stagger: 0.1,
-  //   //   ease: "expo.out",
-  //   // });
-  //   // Animate CTA buttons
-  //   gsap.fromTo(
-  //     ctaRef.current,
-  //     { opacity: 0, y: 20 },
-  //     { opacity: 1, y: 0, duration: .5, delay: 1, ease: "power2.out" }
-  //     );
-  //   }, []);
-
+  },{scope:containerRef})
 
 
   return (
-    <div className='h-screen flex justify-center  items-center'>
-      <div className='absolute'></div>
-      <div className="flex inset-0 -z-10 overflow-hidden">
-        <div className="absolute -z-10 inset-0 "></div>
-        <div className="absolute -z-9 top-36 right-0 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-        <div
-          className="absolute -z-9 top-[120vh] left-5 md:top-[90vh] md:left-[30%] lg:left-4 w-52 h-52 md:w-96 md:h-96 bg-blue-600 rounded-full filter blur-3xl opacity-20 animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div
-          className=" hidden md:block absolute -z-9 md:top-[40%] md:left-2.5 lg:left-1/3 w-5 md:w-96 md:h-96 bg-cyan-500 rounded-full filter blur-3xl opacity-10 animate-pulse"
-          style={{ animationDelay: "4s" }}
-        ></div>
-      </div>
-      <div className=" text-center">
-        <h1 className='text-6xl font-bold ' ref={textRef}>Hire Deelolade</h1>
-        <p className="text-xl sm:text-2xl mt-4 text-gray-300">
-          The Best Full Stack Developer
+    <div className='h-screen flex justify-center  items-center xs:px-4'>
+      <div className=" text-left max-w-5xl" ref={containerRef} >
+        <h1 className='hero-text xs:text-4xl text-6xl font-bold ' >Hire Deelolade.</h1>
+        <p className=" hero-text xs:text-4xl text-6xl font-bold ">
+          The Best Full-Stack Developer.
         </p>
-        <p className="text-lg sm:text-xl mt-2 text-gray-400">
-          Building fast, modern, and scalable web apps that get results.
+        <p className="max-w-3xl xs:text-lg hero-text text-lg sm:text-xl mt-2 text-gray-400">
+        I’m a freelance <b className='hover:text-black transition'>full-stack developer</b> dedicated to building modern, scalable <b  className='hover:text-black transition'>web applications</b>. <br /> I specialize in creating smooth user experiences and performance-optimized digital products for <b className='hover:text-black transition'>startups</b> and <b className='hover:text-black transition'>businesses</b> that value quality and speed.
         </p>
         
         {/* CTA Buttons */}
         
-        <div ref={ctaRef} className="mt-8 flex flex-wrap gap-4 justify-center">
+        <div  className="hero-text  mt-8 flex flex-wrap gap-4 justify-center">
           <a
             href={resume}
-            className="bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-700 transition"
+            className="bg-gray-700 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-black transition"
           >
             View My Work
           </a>
           <a
-            href="mailto:your@email.com"
-            className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-600 hover:text-white transition"
+            href="mailto:habeeboluwanishola13@gmail.com"
+            className="border border-black text-gray-700 px-6 py-3 rounded-md text-lg font-medium hover:bg-black hover:text-white transition"
           >
             Let's Talk
           </a>

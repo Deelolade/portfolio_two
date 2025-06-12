@@ -31,7 +31,7 @@ const Navbar = () => {
           opacity: 0,
           stagger: 0.1,
           duration: 0.5,
-          ease: "back",
+          ease: "power2.out",
         });
       }
     }, [showDropDown]);
@@ -55,15 +55,15 @@ const Navbar = () => {
   return (
     <div className="w-full bg-white border-b border-gray-200 fixed z-50">
       <nav className="flex justify-between items-center h-[8vh] max-w-6xl w-[100vw] mx-auto px-6 lg:px-7 xl:px-0   ">
-        <div className="logo font-semibold text-xl text-gray-700 hover:text-black cursor-pointer">
+        <div className="logo font-bold text-xl text-gray-700 hover:text-black cursor-pointer">
           Deelolade
         </div>
-        <ul className="nav-links w-[40%] md:flex justify-between items-center text-[16px] sm:hidden ">
+        <ul className="nav-links 2xl:w-[40%]  flex justify-between items-center text-[16px] sm:hidden ">
           {navlinks.map((item) => (
             <Link
               key={item}
               ref={addToRefs}
-              className="font-semibold rounded-lg text-gray-700 hover:text-black px-4 py-2 hover:bg-gray-100"
+              className="relative inline-block hover-underline  font-semibold rounded-lg text-gray-700 hover:text-black px-4 py-2 hover:bg-gray-10"
             >
               {item}{" "}
             </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
               <FaExternalLinkAlt className=" text-lg " />
             </a>
             <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-max bg-gray-800 text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-              View My Resume
+              View My Résumé
             </div>
           </div>
           <div className="relative group  p-2 border border-gray-200 rounded-full">
@@ -97,29 +97,28 @@ const Navbar = () => {
           </button>
         </div>
         {showDropDown && (
-          <div  className="dropdown-menu flex flex-col  justify-start fixed top-[8vh] right-0  w-[100vw] h-[92vh]  backdrop-blur-3xl transition-transform ">
-            <div className="mt-8 flex  flex-col justify-between items-center text-center  ">
+          <div  className="dropdown-menu flex flex-col  justify-start fixed top-[8vh] right-0 xxs:overflow-y-auto w-[100vw] h-[92vh] oversc  backdrop-blur-3xl transition-transform ">
+            <div className="xxs:mt-4 mt-8 flex  flex-col justify-between items-center text-center  ">
                 {
                     navlinks.map((item)=>(
-                        <Link key={item} ref={addToDropDownRefs} to={`/${item.toLowerCase()}`} className="text-6xl font-black text-black mb-12 ">{item}</Link>
-
+                        <Link key={item} ref={addToDropDownRefs} to={`/${item.toLowerCase()}`} className="xxs:text-4xl text-6xl font-black text-black xxs:mb-6 mb-12 ">{item}</Link>
                     ))
                 }
             </div>
-            <div className="mt-8 flex xs:flex-col gap-4 justify-center">
+            <div className="xxs:mt-4 mt-8 flex xxs:flex-col xxs:px-8 gap-4 justify-center">
               <a
                 href="https://github.com/Deelolade/"
-                className="border text-center flex justify-center items-center border-indigo-600 text-indigo-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-600 hover:text-white transition"
+                className=" text-center flex justify-center items-center  text-gray-700 px-6 py-3 rounded-full text-lg font-medium hover:text-black transition"
                 target="_blank"
               >
-                <VscGithubInverted/>
+                <VscGithubInverted className="scale-125 transition-transform hover:scale-[1.5]"/>
               </a>
               <a
                 href={resume}
                 target="_blank"
-                className=" flex justify-center items-center gap-3 border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-600 hover:text-white transition"
+                className="relative hover-underline flex justify-between items-center gap-3  text-gray-700 px-6 py-3 rounded-full text-lg font-medium hover:text-black  transition"
               >
-                View Resume <FaExternalLinkAlt />
+                View Résumé <FaExternalLinkAlt />
               </a>
             </div>
           </div>
