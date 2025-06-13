@@ -17,10 +17,10 @@ const Project = ({
 }) => {
   return (
     <>
-      <section className=" mb-12 max-w-5xl mx-auto border border-3 border-gray-300 rounded-2xl p-8 pb-0">
+      <section className=" mb-12 max-w-5xl xs:mx-3 md:mx-8 mx-auto border border-3 border-gray-300 rounded-2xl xs:p-4 p-8 pb-0">
         <div className=" flex items-center flex-col">
-          <h1 className="text-4xl font-bold text-center mb-4">{header}</h1>
-          <p className=" max-w-2xl text-center text-lg text-gray-700">
+          <h1 className="text-4xl xs:text-2xl xxs:text-2xl font-bold text-center mb-4">{header}</h1>
+          <p className=" max-w-2xl text-center xxs:text-[13px] xs:text-[15px] text-lg text-gray-700">
             {description}{" "}
           </p>
           <div className=" flex gap-3 mt-4 mb-8">
@@ -60,7 +60,7 @@ const Project = ({
           <div className="border-border bg-background  border border-r-0 border-b-0 border-l-0">
             <img
               src={image}
-              className=" h-[400px] w-[1024px] z-1 mx-auto  max-w-full grayscale group-hover:grayscale-0 sm:block"
+              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto  max-w-full grayscale group-hover:grayscale-0 sm:block"
               alt=""
             />
           </div>
