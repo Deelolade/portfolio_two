@@ -5,6 +5,10 @@ import konga from "../images/konga.png";
 import animation from "../images/animation-portfolio.png";
 import { PiGoogleChromeLogo } from "react-icons/pi";
 import { RiArrowRightUpLine } from "react-icons/ri";
+import gsap from "gsap";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Project = ({
   header,
@@ -14,11 +18,30 @@ const Project = ({
   image,
   learnMore,
   chromelink,
+  ref
 }) => {
+   gsap.registerPlugin(ScrollTrigger);
+  const containerRef =useRef(null)
+useGSAP(()=>{
+  const tl = gsap.timeline({
+    scrollTrigger:{
+      trigger:".project",
+      start: "top 90%",
+      // end:"10% 10%", end 
+      // scrub: true auto-play
+    }
+  })
+  tl.from(".project",{
+    scale:0.9,
+    duration:0.7,
+    filter: "blur(5px)",
+    ease:"power2.out"
+  }) 
+},{scope:containerRef})
   return (
     <>
-      <section className=" mb-12 max-w-5xl xs:mx-3 md:mx-8 mx-auto border border-3 border-gray-300 rounded-2xl xs:p-4 p-8 pb-0">
-        <div className=" flex items-center flex-col">
+      <section ref={containerRef} className=" mb-12 max-w-5xl xs:mx-3 md:mx-8 mx-auto border border-3 border-gray-300 rounded-2xl xs:p-4 p-8 pb-0">
+        <div className=" project flex items-center flex-col">
           <h1 className="text-4xl xs:text-2xl xxs:text-2xl font-bold text-center mb-4">{header}</h1>
           <p className=" max-w-2xl text-center xxs:text-[13px] xs:text-[15px] text-lg text-gray-700">
             {description}{" "}
@@ -48,7 +71,7 @@ const Project = ({
           href={chromelink}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-[50%] group"
+          className="h-[50%] group "
         >
           <div className="w-full h-8  group bg-accent rounded-t-lg border border-b-0 text-sm">
             <div className="flex gap-2 p-2">
@@ -71,6 +94,8 @@ const Project = ({
 };
 
 const Projects = () => {
+
+
   return (
     <div className="min-h-screen min-w-screen relative  py-12">
       <Project
