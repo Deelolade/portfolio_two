@@ -13,33 +13,32 @@ const HeroSection = () => {
         y: "-300",
         opacity: 0,
         filter: "blur(5px)",
-        stagger: {
-          each: 0.2,
-        },
+        stagger: {each: 0.2},
         duration: 0.7,
         ease: "power2.out",
       });
-      ScrollTrigger.matchMedia({
-      "(min-width: 768px)": ()=>{
-        const leaveTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".hero-text",
-            start: "  top center ",   // when top of .hero-text hits center of viewport
-            end: "bottom top",     // when bottom of .hero-text hits top of viewport
-            scrub: true,
-          }
-        });
+      // ScrollTrigger.matchMedia({
+      // "(min-width: 768px)": ()=>{
+      //   const leaveTl = gsap.timeline({
+      //   scrollTrigger: {
+      //   trigger: ".hero-text",
+      //   start: "bottom",
+      //   end: "top center",
+      //   scrub: true,
+      //   markers: true, // Uncomment to debug
+      //     }
+      //   });
 
-        leaveTl.to(".hero-text", {
-          filter: "blur(5px)",
-          stagger: {
-            each :0.3
-          },
-          duration: 0.9,
-          ease: "power2.out",
-            });
-      }
-      })
+      //   leaveTl.to(".hero-text", {
+      //     filter: "blur(5px)",
+      //     stagger: {
+      //       each :0.3
+      //     },
+      //     duration: 0.9,
+      //     ease: "power2.out",
+      //       });
+      // }
+      // })
     },
     { scope: containerRef }
   );
