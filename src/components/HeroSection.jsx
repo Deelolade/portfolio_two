@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import resume from "/Users/oluwanishola_habeeb/Desktop/react_gsap/Deelolade.pdf";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,33 +19,31 @@ const HeroSection = () => {
         duration: 0.7,
         ease: "power2.out",
       });
-      // ScrollTrigger.matchMedia({
-      // "(min-width: 768px)": ()=>{
-      //   const leaveTl = gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: ".hero-text",
-      //       start: "  top center ",   // when top of .hero-text hits center of viewport
-      //       end: "bottom top",     // when bottom of .hero-text hits top of viewport
-      //       scrub: true,
-      //     }
-      //   });
+      ScrollTrigger.matchMedia({
+      "(min-width: 768px)": ()=>{
+        const leaveTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".hero-text",
+            start: "  top center ",   // when top of .hero-text hits center of viewport
+            end: "bottom top",     // when bottom of .hero-text hits top of viewport
+            scrub: true,
+          }
+        });
 
-      //   leaveTl.to(".hero-text", {
-      //     //  opacity: 0.5,
-      //     // y: 1,
-      //     // filter: "blur(5px)",
-      //     stagger: {
-      //       each :0.3
-      //     },
-      //     duration: 0.9,
-      //     ease: "power2.out",
-      //       });
-      // }
-      // })
+        leaveTl.to(".hero-text", {
+          filter: "blur(5px)",
+          stagger: {
+            each :0.3
+          },
+          duration: 0.9,
+          ease: "power2.out",
+            });
+      }
+      })
     },
     { scope: containerRef }
   );
-
+  const resume = "/Deelolade.pdf"
   return (
     <div className="min-h-screen flex justify-center  items-center md:px-4">
       <div className=" text-left max-w-5xl xxs:mt-16" ref={containerRef}>

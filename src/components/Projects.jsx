@@ -33,7 +33,7 @@ useGSAP(()=>{
   })
   tl.from(".project",{
     scale:0.9,
-    duration:0.7,
+    duration:0.4,
     filter: "blur(5px)",
     ease:"power2.out"
   }) 
