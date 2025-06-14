@@ -7,12 +7,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
   const navRefs = useRef([]);
   const dropdownRefs = useRef([]);
-  navRefs.current = [];
-  dropdownRefs.current = [];
   const navlinks = ["Home", "About", "Projects", "Contact"];
 
   const addToRefs = (element) => {
@@ -49,12 +46,12 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       stagger: 0.1,
-      duration: 0.3,
+      duration: 0.2,
       ease: "power2.out",
     });
   }, []);
-  const handleLinkClick = () => {
-    setIsOpen(!isOpen); // close the dropdown
+  const handleButtonClick = () => {
+    setShowDropDown((prev) => !prev);
   };
   return (
     <div className="w-full bg-white border-b border-gray-200 fixed z-50">
@@ -104,15 +101,12 @@ const Navbar = () => {
         <div className="sm:flex 2xl:hidden">
           <button
             className=" px-2 py-2 hover:bg-gray-200 rounded-lg"
-            onClick={() => {
-              setShowDropDown((prev) => !prev);
-              handleLinkClick();
-            }}
+            onClick={handleButtonClick}
           >
             <GiHamburgerMenu className="text-xl" />
           </button>
         </div>
-        {isOpen && showDropDown && (
+        { showDropDown && (
           <div className=" sm:block 2xl:hidden dropdown-menu flex flex-col  justify-start fixed top-[8vh] right-0 xxs:overflow-y-auto w-[100vw] h-[92vh] oversc  backdrop-blur-3xl transition-transform ">
             <div className="xxs:mt-4 mt-8 flex  flex-col justify-between items-center text-center  ">
               {navlinks.map((item) => (

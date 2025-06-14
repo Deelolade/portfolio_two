@@ -20,16 +20,16 @@ const Project = ({
   chromelink,
   ref
 }) => {
-   gsap.registerPlugin(ScrollTrigger);
+
   const containerRef =useRef(null)
 useGSAP(()=>{
   const tl = gsap.timeline({
-    scrollTrigger:{
-      trigger:".project",
-      start: "top 90%",
-      // end:"10% 10%", end 
-      // scrub: true auto-play
-    }
+    // scrollTrigger:{
+    //   trigger:".project",
+    //   start: "top 90%",
+    //   // end:"10% 10%", end 
+    //   // scrub: true auto-play
+    // }
   })
   tl.from(".project",{
     scale:0.9,
@@ -75,15 +75,15 @@ useGSAP(()=>{
         >
           <div className="w-full h-8  group bg-accent rounded-t-lg border border-b-0 text-sm">
             <div className="flex gap-2 p-2">
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-red-500  "></span>
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-yellow-500 "></span>
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-green-500 "></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-red-500 duration-150 ease-in-out "></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-yellow-500 duration-150  ease-in-out"></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-green-500 duration-150  ease-in-out "></span>
             </div>
           </div>
           <div className="border-border bg-background  border border-r-0 border-b-0 border-l-0">
             <img
               src={image}
-              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto  max-w-full grayscale group-hover:grayscale-0 sm:block"
+              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto duration-150  ease-in-out max-w-full grayscale group-hover:grayscale-0 sm:block"
               alt=""
             />
           </div>

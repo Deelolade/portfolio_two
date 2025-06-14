@@ -48,7 +48,7 @@ const Footer = () => {
             smooth animations. Routing handled by <b>React Router DOM</b>. All
             pages are handcrafted and responsive.Deployed with <b>Vercel</b>.{" "}
             <br /> Code available on{" "}
-            <a href="https://github.com/Deelolade/">
+            <a href="https://github.com/Deelolade/portfolio_two">
               <b>GitHub</b>
             </a>
             .
