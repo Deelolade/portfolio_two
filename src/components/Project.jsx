@@ -8,7 +8,6 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Project = ({
   header,
@@ -18,19 +17,11 @@ const Project = ({
   image,
   learnMore,
   chromelink,
-  ref
 }) => {
 
   const containerRef =useRef(null)
 useGSAP(()=>{
-  const tl = gsap.timeline({
-    // scrollTrigger:{
-    //   trigger:".project",
-    //   start: "top 90%",
-    //   // end:"10% 10%", end 
-    //   // scrub: true auto-play
-    // }
-  })
+  const tl = gsap.timeline()
   tl.from(".project",{
     scale:0.9,
     duration:0.4,

@@ -1,9 +1,7 @@
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-// import Projects from './components/Projects'
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
+import Projects from "./pages/ProjectPage";
 import Contact from "./pages/Contact";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
