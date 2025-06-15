@@ -62,7 +62,7 @@ const HeroSection = () => {
           solutions for <b>startups</b> and <b>small businesses</b>.
         </p>
         {/* CTA Buttons */}
-        <div className="hero-text  mt-8 flex flex-wrap 2xl:gap-4 xs:justify-center justify-start">
+        <div className="hero-text  mt-8 flex flex-wrap 2xl:gap-4  justify-start">
           <a
             href={resume}
             className="bg-gray-700 text-white xxs:px-3 xs:py-2 px-6 py-2 rounded-md text-lg font-medium hover:bg-black transition"

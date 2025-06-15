@@ -30,6 +30,9 @@ module.exports = {
   		}
   	},
   	extend: {
+		 fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
   		height: {
   			screen: '100dvh'
   		},
