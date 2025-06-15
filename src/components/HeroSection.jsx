@@ -46,32 +46,30 @@ const HeroSection = () => {
   return (
     <div className="min-h-screen flex justify-center  items-center md:px-4">
       <div className=" text-left max-w-5xl xxs:mt-16" ref={containerRef}>
-        <h1 className="hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold ">
+        <h1 className="hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold text-gray-700 ">
           Hire Deelolade.
         </h1>
-        <p className=" hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold ">
+        <p className=" hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold text-gray-700">
           The Best Full-Stack Developer.
         </p>
-        <p className="max-w-3xl xxs:text-[15px] xxs:text-left xs:text-lg hero-text text-lg sm:text-xl mt-2 text-gray-400">
+        <p className="max-w-3xl xxs:text-[15px] xxs:text-left xs:text-lg hero-text text-lg sm:text-xl xs:mt-2 2xl:mt-4 text-gray-400">
           I build fast, scalable <b className="underline">web applications</b>{" "}
           using <b className="">React</b>,<b className="">Next.js</b>,{" "}
           <b className="">Node.js</b>,<b className=""> MongoDB</b>, and{" "}
           <b className="">Tailwind CSS</b>. I trained at{" "}
           <b className="underline">New Horizons Nigeria</b>, where I developed a
           strong foundation in web development and started building real
-          solutions for <b>startups</b> and <b>small businesses</b>. When I’m
-          not coding, you’ll probably find me sewing,{" "}
-          <b className="underline">my creative hobby</b> that sharpens my focus
-          and attention to detail.
+          solutions for <b>startups</b> and <b>small businesses</b>.
         </p>
         {/* CTA Buttons */}
-        <div className="hero-text  mt-8 flex flex-wrap gap-4 justify-start">
+        <div className="hero-text  mt-8 flex flex-wrap 2xl:gap-4 xs:justify-center justify-start">
           <a
             href={resume}
             className="bg-gray-700 text-white xxs:px-3 xs:py-2 px-6 py-2 rounded-md text-lg font-medium hover:bg-black transition"
           >
-            View My Work
+           Let’s Build
           </a>
+          
           <a
             href="mailto:habeeboluwanishola13@gmail.com"
             className="border border-black text-gray-700 px-6 xs:py-2 py-2 rounded-md text-lg font-medium hover:bg-black hover:text-white transition"

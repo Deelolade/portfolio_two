@@ -1,4 +1,4 @@
-import Projects from '../components/Project'
+import Projects from '../components/Projects'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -17,10 +17,10 @@ const ProjectPage = () => {
        },
   );
   return (
-    <div className='pt-20'>
-      <div className=" text-center my-10">
+    <div className='pt-20 xs:pt-10'>
+      <div className=" text-center my-10 xs:my-5">
         <h1 className='hero-text xxs:text-3xl xs:text-4xl text-6xl font-bold text-gray-400 hover:text-black'>My Projects</h1>
-        <div className="mt-4">
+        <div className=" hero-text mt-4">
           <p className='text-gray-400'>Just me, building stuff.</p>
         <p className='text-gray-400'>Here are a few things I’ve created. Always learning, always improving.</p>
         </div>

@@ -8,6 +8,7 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Project = ({
   header,
@@ -17,11 +18,19 @@ const Project = ({
   image,
   learnMore,
   chromelink,
+  ref
 }) => {
-
+   gsap.registerPlugin(ScrollTrigger);
   const containerRef =useRef(null)
 useGSAP(()=>{
-  const tl = gsap.timeline()
+  const tl = gsap.timeline({
+    scrollTrigger:{
+      trigger:".project",
+      start: "top 90%",
+      // end:"10% 10%", end 
+      // scrub: true auto-play
+    }
+  })
   tl.from(".project",{
     scale:0.9,
     duration:0.4,
@@ -31,10 +40,10 @@ useGSAP(()=>{
 },{scope:containerRef})
   return (
     <>
-      <section ref={containerRef} className=" mb-12 max-w-5xl xs:mx-3 md:mx-8 mx-auto border border-3 border-gray-300 rounded-2xl xs:p-4 p-8 pb-0">
+      <section ref={containerRef} className=" mb-12 max-w-5xl xs:mx-3 md:mx-8 mx-auto border border-3 border-gray-300 rounded-2xl xs:p-4 p-8 xs:pb-0 pb-0">
         <div className=" project flex items-center flex-col">
-          <h1 className="text-4xl xs:text-2xl xxs:text-2xl font-bold text-center mb-4">{header}</h1>
-          <p className=" max-w-2xl text-center xxs:text-[13px] xs:text-[15px] text-lg text-gray-700">
+          <h1 className="text-4xl xs:text-2xl xxs:text-2xl font-bold text-center mb-4 text-gray-700">{header}</h1>
+          <p className=" max-w-2xl text-center xxs:text-[13px] xs:text-[15px] text-lg text-gray-400">
             {description}{" "}
           </p>
           <div className=" flex gap-3 mt-4 mb-8">
@@ -42,7 +51,7 @@ useGSAP(()=>{
               href={learnMore}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 bg-black font-semibold text-sm text-white rounded-lg space-x-3  flex items-center"
+              className="px-3 py-2 bg-gray-700 hover:bg-black font-semibold text-sm text-white rounded-lg space-x-3  flex items-center"
             >
               {buttonOne}
               <RiArrowRightUpLine className="scale-110 ms-1" />
@@ -51,7 +60,7 @@ useGSAP(()=>{
               href={chromelink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 group py-2 border font-semibold text-sm text-gray-700 rounded-lg flex items-center space-x-2"
+              className="px-3 group py-2 border hover:border-gray-700 font-semibold text-sm text-gray-700 rounded-lg flex items-center space-x-2"
             >
               <PiGoogleChromeLogo className="scale-110 me-1" />
               {buttonTwo}

@@ -23,7 +23,7 @@ const Footer = () => {
               to={
                 item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()} `
               }
-              className={`relative inline-block hover-underline xs:text-[13px] 2xl:mx-3 font-semibold rounded-lg text-gray-400 hover:text-black px-4 py-2 hover:bg-gray-10`}
+              className={`relative inline-block hover-underline xs:text-[13px] 2xl:mx-3 xs:mx-0 font-semibold rounded-lg text-gray-400 hover:text-black px-4 py-2 hover:bg-gray-10`}
             >
               {item}
             </Link>
