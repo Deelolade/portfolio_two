@@ -9,9 +9,35 @@ import { IoSendSharp } from "react-icons/io5";
 
 const Form = () => {
  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+  const formData = {
+    access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+    subject: "New Contact Message from Portfolio",
+    ...data
   };
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      console.log("Success:", result);
+      // Optionally: reset the form or show a success message
+    } else {
+      console.error("Web3Forms Error:", result);
+    }
+  } catch (error) {
+    console.error("Submission Failed:", error);
+  }
+};
+
   useEffect(()=>{
    gsap.set(".form", { opacity: 0, scale: 0.9, filter: "blur(5px)" }); // set initial state
   gsap.to(".form", {
