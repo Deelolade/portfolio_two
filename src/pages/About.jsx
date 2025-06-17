@@ -13,7 +13,7 @@ const About = () => {
       duration: 0.7,
       ease: "power2.out",
     });
-    tl.from(".para", {
+    gsap.from(".para", {
       filter: "blur(5px)",
       stagger: { each: 0.2 },
       duration: 0.7,
