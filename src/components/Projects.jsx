@@ -84,7 +84,7 @@ useGSAP(()=>{
           <div className=" bg-background  border border-r-0 border-b-0 border-l-0">
             <img
               src={image}
-              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto duration-150  ease-in-out max-w-full grayscale  group-hover:grayscale-0 sm:block"
+              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto duration-500  ease-in-out max-w-full grayscale  group-hover:grayscale-0 sm:block"
               alt=""
             />
           </div>
