@@ -1,6 +1,7 @@
 import imageupload from "../images/image-upload.png";
 import quickGig from "../images/quick-gig.png";
 import qrCode from "../images/qrcode-light.png";
+import voyagepro from "../images/voyagepro.jpg";
 import konga from "../images/konga.png";
 import animation from "../images/animation-portfolio.png";
 import { PiGoogleChromeLogo } from "react-icons/pi";
@@ -27,14 +28,14 @@ useGSAP(()=>{
     scrollTrigger:{
       trigger:".project",
       start: "top 90%",
-      // end:"10% 10%", end 
-      // scrub: true auto-play
+      end:"5% 50%", 
+      scrub: true
     }
   })
   tl.from(".project",{
-    scale:0.9,
-    duration:0.4,
-    filter: "blur(5px)",
+    scale:1.5,
+    duration:0.5,
+    filter: "blur(20px)",
     ease:"power2.out"
   }) 
 },{scope:containerRef})
@@ -75,15 +76,15 @@ useGSAP(()=>{
         >
           <div className="w-full h-8  group bg-accent rounded-t-lg border border-b-0 text-sm">
             <div className="flex gap-2 p-2">
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-red-500 duration-150 ease-in-out "></span>
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-yellow-500 duration-150  ease-in-out"></span>
-              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-green-500 duration-150  ease-in-out "></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-red-500 duration-400 ease-in-out "></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-yellow-500 duration-400  ease-in-out"></span>
+              <span className="size-3 rounded-full bg-gray-300 group-hover:bg-green-500 duration-400  ease-in-out "></span>
             </div>
           </div>
           <div className=" bg-background  border border-r-0 border-b-0 border-l-0">
             <img
               src={image}
-              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto duration-150  ease-in-out max-w-full grayscale group-hover:grayscale-0 sm:block"
+              className=" xs:h-[250px] lg:h-[350px] h-[400px] w-[1024px] z-1 mx-auto duration-150  ease-in-out max-w-full grayscale  group-hover:grayscale-0 sm:block"
               alt=""
             />
           </div>
@@ -98,6 +99,19 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen min-w-screen relative  py-12">
+      <Project
+        header="Voyagepro travel website"
+        description={
+          <>
+           <b>VoyagePro</b> is a modern <b>travel booking platform</b> designed to make exploring the world effortless. Built for <b>speed and convenience,</b> it connects travelers with personalized itineraries, accommodations, and experiences in <b>real time</b>.
+          </>
+        }
+        buttonOne="Learn More"
+        buttonTwo="Live Demo"
+        image={voyagepro}
+        learnMore="https://github.com/Deelolade/voyagepro-frontend"
+        chromelink="https://voyagepro-frontend.vercel.app/"
+      />
       <Project
         header="QuickGig Freelance Marketplace"
         description={
@@ -125,7 +139,7 @@ const Projects = () => {
         buttonTwo="Live Demo"
         image={imageupload}
         learnMore="https://github.com/Deelolade/file-image-crud-app"
-        chromelink="https://file-image-crud-app-production.up.railway.app/"
+        chromelink="https://gallery-crud-app.onrender.com/"
       />
       <Project
         header="QR Code Scanner & Generator"
